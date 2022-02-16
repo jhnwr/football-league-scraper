@@ -1,6 +1,10 @@
+from sqlmodel.sql.expression import Select, SelectOfScalar
+
 from db.database import create_db_and_tables
 from services.league_service import get_league_data, add_to_database, update_teams
-import db.models
+
+SelectOfScalar.inherit_cache = True
+Select.inherit_cache = True
 
 
 def main():
